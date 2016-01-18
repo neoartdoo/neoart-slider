@@ -1,3 +1,5 @@
-# neoart-slider
-Main
+# neoart-slider Ghost theme
+Main Soon more.. 
+
+
  
