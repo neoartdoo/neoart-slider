@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{asset "fonts/icons/css/font-awesome.min.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/nprogress.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+    <div class="innerWrapper">
+        <div class="menuContainer">
+            <input type="checkbox" id="mainNavCheck" />
+            <div class="mobileMenuContainer">
+                <div class="nav">
+                    <div class="reflow">
+                        <div class="content">
+                            <label for="mainNavCheck" class="mobileMenuButton">
+                                <span class="icon icon-menu"></span>
+                                <span class="title">Menu</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="navLinks">
+
+                </div>
+            </div>
+            <div class="navContainer">
+                <div class="nav">
+                    <div class="reflow">
+                        <div class="content">
+                            <a href="/" class="ajaxPageLink logoContainer"><div class="logo">{{#if @blog.logo}}<img src="{{@blog.logo}}" />{{else}}<h1>{{@blog.title}}</h1>{{/if}}</div></a>
+                            <label for="mainNavCheck" class="mobileMenuButton">
+                                <span class="icon icon-menu"></span>
+                                <span class="title">Menu</span>
+                            </label>
+                            <div class="navLinks">
+                                <ul>
+                                    <li><a href="/" class="active ajaxPageLink">Home</a></li>
+                                    <li>
+                                        <a href="/alltags" class="ajaxPageLink tagList">tag list</a>
+                                        <ul>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/about" class="ajaxPageLink">About</a></li>
+                                    <li><a href="/contact" class="ajaxPageLink">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            {{{body}}}
+        </div>
+    </div>
+
+    <div class="pagination">
+        {{#is "author,home,paged,index,tag"}}
+        <div class="container">
+            <div class="navigation">
+                <span class="prev"><i class="fa fa-angle-up"></i></span>
+                <span class="next"><i class="fa fa-angle-down"></i></span>
+            </div>
+            <div class="spacer"> | </div>
+            {{pagination}}
+        </div>
+        {{/is}}
+    </div>
+
+    {{! The main JavaScript files}}
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/hybrid.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <!--<![endif]-->
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.touchSwipe.min.js"}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/perfect-scrollbar.min.css"}}" />
+    <script type="text/javascript" src="{{asset "js/perfect-scrollbar.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.history.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/nprogress.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/script.js"}}"></script>
+    <noscript><style>body{opacity:1;}.articleContainer{overflow: auto;}</style></noscript>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}} - {{code}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css" }}" />
+    {{ghost_head}}
+</head>
+
+<body class="preload errorPage">
+    <div class="errorContain">
+        <div class="error">
+            <h1>{{code}}</h1>
+            <hr />
+            <h2>{{message}}</h2>
+            <p><a href="/">Take me to the home page →</a></p>
+            {{#if stack}}
+            <br />
+            <div>
+                <h3>Stack Trace</h3>
+                <p><strong>{{message}}</strong></p>
+                <ul>
+                    {{#each stack}}
+                    <li>
+                        at
+                        {{#if function}}<em>{{function}}</em>{{/if}}
+                        <span>({{at}})</span>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</body>
+</html>

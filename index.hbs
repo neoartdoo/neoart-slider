@@ -1,0 +1,25 @@
+{{!< default}}
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+<div id="container" class="{{body_class}}" >
+    <div class="slider">
+        {{! The tag below includes the post loop - partials/loop.hbs }}
+        {{> "loop"}}
+    </div>
+</div>
+<div class="ajaxedContainer">
+    <a class="ajaxCloseLink closePostButton" href="/">
+        <div class="wrapper">
+            <div class="iconClose"><i class="fa fa-angle-left"></i></div>
+            BACK
+        </div>
+    </a>
+    <div class="ajaxContent">
+
+    </div>
+</div>
+<div class="pagePaginationContainer">
+    <div class="content">
+
+    </div>
+</div>

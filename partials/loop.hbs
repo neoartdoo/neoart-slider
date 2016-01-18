@@ -1,0 +1,22 @@
+{{! This is the post loop - each post will be output using this markup }}
+
+{{#foreach posts}}
+{{#if image}}
+<div class="postItem {{post_class}}">
+    <div class="contentWrapper" style="background-image: url({{image}})">
+{{else}}
+    <div class="postItem noCoverImage {{post_class}}">
+        <div class="contentWrapper">
+{{/if}}
+        <div class="reflow contentHolder">
+            <div class="content">
+                <div class="excerpt">
+                    <h1 class="postTitle"><a href="{{url}}" class="ajaxSliderPostLink">{{title}}</a></h1>
+                    <div class="text"><div class="mediaExtract">{{content words="1"}}</div><p>{{excerpt words="20"}}</p></div>
+                    <a class="postButton ajaxSliderPostLink" href="{{url}}">View more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/foreach}}
